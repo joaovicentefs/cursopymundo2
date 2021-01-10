@@ -1,5 +1,6 @@
 from random import randint
 from time import sleep
+jokenpo = ('Pedra', 'Papel', 'Tesoura')
 print('''Suas opções:
 [ 0 ] PEDRA
 [ 1 ] PAPEL
@@ -11,10 +12,10 @@ sleep(1.0)
 print('KEN')
 sleep(1)
 print('PO!!!')
-print('-=' * 20)
-print('Computador jogou {}'.format(computador))
-print('Jogador jogou {}'.format(jogador))
-print('-=' * 20)
+print('-=' * 11)
+print('Computador jogou {}'.format(jokenpo[computador]))
+print('Jogador jogou {}'.format(jokenpo[jogador]))
+print('-=' * 11)
 if jogador == computador:
 	print('EMPATE')
 elif jogador == 0:
