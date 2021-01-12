@@ -1,6 +1,8 @@
 soma = 0
-for c in range(0,6):
-	n = int(input('Digite um número inteiro: '))
+cont = 0
+for c in range(1,7):
+	n = int(input('Digite o {}° número inteiro: '.format(c)))
 	if n % 2 == 0:
 		soma += n
-print('Somando apenas os números pares digitados o resultado é {}'.format(soma))
+		cont += 1
+print('Somando apenas os {} números pares digitados o resultado é {}'.format(cont, soma))
