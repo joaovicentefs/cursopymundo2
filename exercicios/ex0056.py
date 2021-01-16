@@ -8,16 +8,13 @@ for pess in range(1,5):
 	idade = int(input('Idade: '))
 	sexo = str(input('Sexo [M/F]: ')).upper()
 	totid += idade
-	if pess == 1:
+	if pess == 1 and sexo == 'M':
 		velho = idade
-		if sexo == 'F' and idade < 20:
-			cont += 1
-		else:
-			cont = 0
-	else:
-		if idade > velho and sexo == 'M':
-			velho = idade
-			nvelho = nome
+	elif sexo == 'M' and idade > velho:
+		velho = idade
+		nvelho = nome
+	elif sexo == 'F' and idade < 20:
+		cont += 1
 media = float(totid / 4)
 print('A média de idade do grupo é de {:.1f} anos'.format(media))
 print('O homem mais velho tem {} anos e se chama {}.'.format(velho, nvelho))
