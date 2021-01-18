@@ -9,10 +9,13 @@ chute = int(input('Tente advinhar, qual número eu pensei? '))
 print('PROCESSANDO...')
 sleep(1)
 while chute != numero:
-	chute = int(input('Você errou! Tente novamente: '))
+	if chute > numero:
+		print('Menos...')
+	elif chute < numero:
+		print('Mais...')
+	chute = int(input('Tente novamente: '))
 	cont += 1
-	if chute > 
-if cont == 1:
+if cont == 0:
 	print('CORRETO! O Computador pensou em {}! E você acertou de primeira!'.format(numero))
 elif cont > 1:
 	print('CORRETO! O Computador pensou em {}! E você precisou de {} chutes para acertar!'.format(numero, cont))
