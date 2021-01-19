@@ -32,7 +32,9 @@ while opcao != 5:
 	elif opcao == 4:
 		n1 = int(input('Primeiro valor: '))
 		n2 = int(input('Segundo valor: '))
-	elif opcao != [1, 2, 3, 4, 5]:
+	elif opcao == 5:
+		print('Finalizado...')
+	else:
 		print('Opção inválida! Tente novamente.')
-print('Finalizado...')
-print('Programa encerrado!')
+sleep(0.5)
+print('Programa encerrado! Volte sempre!')
