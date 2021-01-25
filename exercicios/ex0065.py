@@ -1,16 +1,17 @@
-cont = soma = 0
-resp = 'S'
-num = 0
-maior = menor = num
+maior = menor = cont = soma = 0
+resp = 's'
 while resp in 'Ss':
 	num = int(input('Digite um número: '))
-	resp = str(input('Quer continuar? [S/N] ')).strip().lower()[0]
 	soma += num
 	cont +=1
-	if num > maior:
-		maior = num
-	if menor > num:
-		menor = num
+	resp = str(input('Quer continuar? [S/N] ')).strip().lower()[0]
+	if cont == 1:
+		maior = menor = num # Aqui é o que u estava errando no exrecício
+	else: # Aqui também
+		if num > maior:
+			maior = num
+		elif num < menor:
+			menor = num		
 media = soma / cont
 print('Você digitou {} números e a média foi {}'.format(cont, media))
 print('O maior valor foi {} e o menor foi {}'.format(maior, menor))
