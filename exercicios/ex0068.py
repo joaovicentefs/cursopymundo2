@@ -1,13 +1,15 @@
 from random import randint
 cont = 0
-val_computador = randint(0,10)
 print('=-' * 15)
 print('VAMOS JOGAR PAR OU IMPÁR')
 print('=-' * 15)
 while True:
 	val_jogador = int(input('Digite um valor: '))
+	val_computador = randint(0,10)
 	soma = val_computador + val_jogador
-	jogada = str(input('Para ou Ímpar? [P/I] ')).strip().upper()[0]
+	jogada = ' '
+	while jogada not in 'PI': # Esse while é para tratar caso o usuário digite um valor não disponível
+		jogada = str(input('Para ou Ímpar? [P/I] ')).strip().upper()[0]
 	if jogada == 'P':
 		jogada = 'PAR'
 	elif jogada == 'I':
