@@ -24,4 +24,3 @@ print('-=' * 30)
 print(f'A soma dos valores pares é {somap}.')
 print(f'A soma dos valores da terceira coluna é {soma3}.')
 print(f'O maior valor da segunda linha é {maiorl2}.')
-
