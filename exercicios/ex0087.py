@@ -9,8 +9,12 @@ for l in range(0, 3):
 			soma3 += matriz[l][c]
 		if len(matriz) == 1 and c == 0:
 			maiorl2 = matriz[l][c]
-		elif len(matriz) == 1 and matriz[l][c] > maiorl2:
-			maiorl2 = matriz[l][c]
+for c in matriz[1]:
+	if c == matriz[1][0]:
+		maiorl2 = c
+	else:
+		if c > maiorl2:
+			maiorl2 = c
 print('-=' *30)
 for l in range(0, 3):
 	for c in range(0, 3):
