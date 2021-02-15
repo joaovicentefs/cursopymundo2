@@ -10,16 +10,16 @@ while True:
 	if resp == 'N':
 		break
 print('-=' * 30)
-print('Nº ', '{:<10}'.format("NOME"), 'MÉDIA')
+print(f'{"Nº":<4}{"NOME":<10}{"MÉDIA":>8}')
 print('=' * 30)		
 for i, d in enumerate(boletim, 1):
-	print(f'{i}', f'{d[0]:<14}', f'{(d[1] + d[2]) / 2:>}')
-print('-' * 30)
+	print(f'{i:<4}', f'{d[0]:<10}', f'{(d[1] + d[2]) / 2:>8.1f}')
 while True:
+	print('-' * 30)
 	opt = int(input('Mostrar notas de qual aluno? (999 interrompe): ')) - 1
-	if opt == 999:
+	if opt == 998:
+		print('FINALIZANDO...')
 		break
-	print(f'Notas de {boletim[opt][0]} são {boletim[opt][1]} e {boletim[opt][2]}')
-
-print('FINALIZANDO...')
+	if opt <= len(boletim):
+		print(f'Notas de {boletim[opt][0]} são {boletim[opt][1]} e {boletim[opt][2]}')
 print('<<< VOLTE SEMPRE >>>')
