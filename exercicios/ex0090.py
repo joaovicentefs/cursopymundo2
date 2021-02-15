@@ -1,11 +1,12 @@
 ficha = dict()
 ficha['nome'] = str(input('Nome: '))
 ficha['media'] = float(input(f'Média de {ficha["nome"]}: '))
-if ficha['media'] >= 6.0:
+if ficha['media'] >= 7.0:
 	ficha['status'] = 'Aprovado'
+elif 5 <= ficha['media'] < 7:
+	ficha['status'] = 'Recuperação'
 else:
 	ficha['status'] = 'Reprovado'
 print('-=' * 30)
-print('- ', f'Nome é igual a {ficha["nome"]}')
-print('- ', f'Ḿédia é igual a {ficha["media"]}')
-print('- ', f'Situação é igual a {ficha["status"]}')
+for k, v in ficha.items():
+	print(f'  - {k} é igual a {v}.')
