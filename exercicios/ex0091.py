@@ -6,5 +6,5 @@ partida = {'jogador1': randint(1, 6),
 			'jogador4': randint(1, 6)}
 print('Valores Sorteados:')
 for k, v in partida.items():
-	print(f'{k} tirou {v}')
+	print(f'{k} tirou {v} no dado.')
 	sleep(0.5)
