@@ -1,5 +1,7 @@
 from random import randint
 from time import sleep
+from operator import itemgetter
+ranking = list()
 partida = {'jogador1': randint(1, 6),
 			'jogador2': randint(1, 6),
 			'jogador3': randint(1, 6),
@@ -7,4 +9,10 @@ partida = {'jogador1': randint(1, 6),
 print('Valores Sorteados:')
 for k, v in partida.items():
 	print(f'{k} tirou {v} no dado.')
+	sleep(0.5)
+print('-=' * 30)
+print('  == RANKING DOS JOGADORES ==')
+ranking = sorted(partida.items(), key=itemgetter(1), reverse=True)
+for i, v in enumerate(ranking):
+	print(f'   {i + 1}º lugar: {v[0]} com {v[1]}.')
 	sleep(0.5)
