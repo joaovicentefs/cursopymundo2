@@ -2,29 +2,48 @@ elenco = list()
 jogador = dict()
 gols = list()
 while True:
+    jogador.clear()
+    gols.clear()
     jogador['nome'] = str(input('Nome do Jogador: '))
-    jogador['partidas'] = int(input('Quantas partidas {} jogou? '.format(jogador['nome'])))
-    for g in range(0, jogador['partidas']):
+    jogos = int(input('Quantas partidas {} jogou? '.format(jogador['nome'])))
+    for g in range(0, jogos):
         gols.append(int(input(f'Quantos gols na {g + 1}ª? ')))
     jogador['gols'] = gols[:]
     jogador['total'] = sum(jogador['gols'])
     elenco.append(jogador.copy())
-    jogador.clear()
-    gols.clear()
-    resp = str(input('Quer continuar? [S/N] ')).strip().upper()[0]
+    while True:
+        resp = str(input('Quer continuar? [S/N] ')).strip().upper()[0]
+        if resp in 'SN':
+            break
+        print('ERRO! Responda apenas S ou N.')
     if resp == 'N':
         break
 print('-=' * 30)
-print(elenco)
-print(f'{"cod":<4}{"nome":<15}{"gols":<15}{"total":>5}')
+print('cod ', end='')
+for i in jogador.keys():
+    print(f'{i:<15}', end='')
+print()
 print('-' * 40)
 for i, j in enumerate(elenco):
-    print(f'{i:<4}', end=' ')
-    for k, v in j.items():
-        if k == 'nome':
-            print(f'{v:<15}', end=' ')
-        if k == 'gols':
-            print(v, f'{"":<5}', end=' ')
-        if k == 'total':
-            print(f'{v:>3}', end=' ')
+    print(f'{i+1:>3} ', end='')
+    for d in j.values():
+        print(f'{str(d):<15}', end='')
     print()
+print('-' * 40)
+while True:
+    busca = int(input('Mostrar os dados de qual jogador? (999 para parar) ')) - 1
+    if busca == 998:
+        break
+    if busca > len(elenco):
+        print(f'ERRO! Não existe jogador com o código {busca + 1}')
+    else:
+        print(f' -- LEVANTAMENTO DO JOGADOR {elenco[busca]["nome"]}:')
+        for i, g in enumerate(elenco[busca]['gols']):
+            if g > 1:
+                print(f'   No jogo {i + 1} fez {g} gols.')
+            elif g == 1:
+                print(f'   No jogo {i + 1} fez {g} gol.')
+            elif g == 0:
+                print(f'   No jogo {i + 1} não fez nenhum gol!.')
+    print('-' * 40)
+print('<< VOLTE SEMPRE >>')
