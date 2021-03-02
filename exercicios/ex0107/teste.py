@@ -1,5 +1,5 @@
-import moeda
-preco = float(input('Digite o preço: '))
-print(moeda.metade(preco))
-print(moeda.dobro(preco))
-print(moeda.aumentar(preco, 10))
+from exercicios.ex0107 import moeda
+preco = float(input('Digite o preço: R$ '))
+print(f'A metade de R$ {preco} é R$ {moeda.metade(preco)}')
+print(f'O Dobro de R$ {preco} é R$ {moeda.dobro(preco)}')
+print(f'Aumentando 10%, temos R$ {moeda.aumentar(preco, 10)}')
