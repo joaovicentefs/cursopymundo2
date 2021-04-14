@@ -12,9 +12,17 @@ def leiaInt(msg):
             return n
 
 def leiaFloat(msg):
-    while True
+    while True:
         try:
             n = float(input(msg))
-        except (ValueError, TypeError)
-num = leiaInt('Digite um valor: ')
-print(f'O valor digitado foi {num}')
+        except (ValueError, TypeError):
+            print('\033[31mERRO: Por favor, digite um número real válido.\033[m')
+        except (KeyboardInterrupt):
+            print('\033[31mEntrada de dados interrompida pelo usuário.\033[m')
+            return 0.0
+        else:
+            return n
+
+n1 = leiaInt('Digite um valor inteiro: ')
+n2 = leiaFloat('Digite um valor real: ')
+print(f'O valor inteiro digitado foi {n1} e o real foi {n2}')
