@@ -11,6 +11,10 @@ def leiaInt(msg):
         else:
             return n
 
-
+def leiaFloat(msg):
+    while True
+        try:
+            n = float(input(msg))
+        except (ValueError, TypeError)
 num = leiaInt('Digite um valor: ')
 print(f'O valor digitado foi {num}')
